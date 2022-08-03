@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js App</title>
+</head>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    body {
+        background-image: url(./Assets/pexels-jahoo-clouseau-388415.jpg);
+        /* background-position: center; */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    h1,
+    h2,
+    p {
+        text-align: center;
+        text-shadow: 2px 2px 8px rgba(150, 150, 150, 1);
+    }
+    
+    h1 {
+        margin-top: 5%;
+        font-size: 3rem;
+    }
+    
+    h2 {
+        margin-top: 3%;
+        font-size: 7rem;
+        color: rgba(0, 0, 0, 0.943);
+    }
+    
+    .main {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    button {
+        padding: 0.7rem 2rem;
+        margin-top: 3rem;
+        border: none;
+        border-radius: 0.7rem;
+        font-size: 1.2rem;
+        color: whitesmoke;
+        cursor: pointer;
+        -webkit-box-shadow: 10px 10px 64px -4px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 64px -4px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 64px -4px rgba(0, 0, 0, 0.75);
+    }
+    
+    button:nth-child(1):hover {
+        background-color: rgb(8, 142, 8);
+    }
+    
+    button:nth-child(2):hover {
+        background-color: rgb(53, 53, 225);
+    }
+    
+    button:nth-child(3):hover {
+        background-color: rgb(227, 4, 4);
+    }
+    
+    p {
+        margin-top: 3rem;
+        font-size: 1.7rem;
+        font-weight: 500;
+        color: rgba(245, 245, 245, 0.714);
+    }
+    
+    button:nth-child(1) {
+        background-color: green;
+    }
+    
+    button:nth-child(2) {
+        background-color: blue;
+    }
+    
+    button:nth-child(3) {
+        background-color: red;
+    }
+</style>
+
+<body>
+    <h1>People Entered</h1>
+    <h2 id="count-el">0</h2>
+    <div class="main">
+        <button id="increment-btn" onclick="increment()">Increment</button>
+        <button id="save-btn" onclick="save()">Save</button>
+        <button id="decrement-btn" onclick="decrement()">Decrement</button>
+    </div>
+    <p id="save-el">Previous Enteries : </p>
+
+    <script>
+        let count = 0;
+        let countEl = document.querySelector("#count-el");
+        let saveEl = document.querySelector("#save-el");
+
+        function increment() {
+            count += 1;
+            countEl.textContent = count;
+        }
+
+        function decrement() {
+            if (count > 0) {
+                count -= 1;
+                countEl.textContent = count;
+            }
+        }
+
+        function save() {
+            let countStr = count + " - ";
+            saveEl.textContent += countStr;
+            count = 0;
+            countEl.textContent = 0;
+
+        }
+    </script>
+</body>
+
+</html>
